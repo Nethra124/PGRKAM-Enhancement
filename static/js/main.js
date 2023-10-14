@@ -103,8 +103,6 @@
           document.getElementById("chat-response").innerHTML = generatedResponse;
         });
       }
-      
-    
     
     // Initiate the wowjs
     new WOW().init();

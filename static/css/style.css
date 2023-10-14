@@ -5,10 +5,12 @@
     --light: #fdf7ef;
     --dark: #2B3940;
 }
+
 body {
     margin: 0;
     padding: 0;
-}.search-engine {
+}
+.search-engine {
     width: 100%;
     max-width: 500px;
     margin: auto auto;
@@ -46,8 +48,7 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 400px;
-    height: 400px;
+    width: 350px;
     background-color: #f0f0f0;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -64,16 +65,15 @@ body {
     background-color: #b05200;
     color: #fff;
     font-weight: bold;
-    padding: 15px;
+    padding: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
 .chat-bar .chat-content {
-    max-height: 450px;
+    max-height: 200px;
     overflow-y: auto;
-    overflow-x: auto;
-    padding: 0px 0px 0px -10px;
+    padding: 10px;
     background-color: #fff;
     flex-grow: 1;
 }
@@ -110,7 +110,6 @@ body {
     color: #fff; /* White text color */
     border-radius: 5px;
 }
-
 
 
 /*** Spinner ***/
@@ -331,7 +330,7 @@ body {
 }
 
 .page-header {
-    background: linear-gradient(rgba(43, 57, 64, .5), rgba(43, 57, 64, .5)), url(../img/carousel-1.jpg) center top no-repeat;
+    background: linear-gradient(rgba(43, 57, 64, .5), rgba(43, 57, 64, .5)), url(../img/carousel-1.jpg) center center no-repeat;
     background-size: cover;
 }
 

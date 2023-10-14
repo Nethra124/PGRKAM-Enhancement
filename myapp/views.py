@@ -53,3 +53,6 @@ def testimonial(request):
 
 def chat(request):
     return render(request,'chat.html')
+
+def resume(request):
+    return render(request,"resume.html")

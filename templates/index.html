@@ -30,6 +30,8 @@
 
     <!-- Template Stylesheet -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/theme.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     
 <!------ Include the above in your HEAD tag ---------->
 
@@ -80,6 +82,9 @@
             </div>
         </nav>
         <!-- Navbar End -->
+
+        <button class="navbtn nav-1"><span class="material-symbols-outlined">forum</span></button>
+        <div class="forumfull"><div class="forumtop">Forum<button class="forumbtn">--</button></div><iframe class="forumframe" src="about.html"></iframe></div>
         
       
         <!-- Carousel Start -->
@@ -153,7 +158,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- Search End -->
         <div class="chat-bar">
             <div class="chat-header">Chat Assistant</div>
             <div class="chat-content" id="chat-content">
@@ -165,15 +170,6 @@
                 <button id="send-button">Send</button>
             </div>
         </div>
-        
-        <!-- Search End -->
-        <div class="chat-bar">
-            <div class="chat-header">Chat Assistant</div>
-            <div class="chat-content" id="chat-content" >
-              <!-- <iframe src="https://fx2lepax4k6tmt843jr4fx.streamlit.app//?embed=true" width="100%" height="600" ></iframe> -->
-              <iframe src="http://localhost:8501/" width="100%" height="100%" style="position:relative; bottom: -50px;"></iframe>
-            </div>
-          </div>
 
 
         <!-- Category Start -->
@@ -740,38 +736,18 @@
     <!-- Template Javascript -->
     <script src="{% static 'js/main.js'%}"></script>
     <script>
-        const chatContainer = document.getElementById('chatContainer');
-        const arrowButton = document.getElementById('arrowButton');
-
-        // Toggle the chat div visibility and arrow direction
-        arrowButton.addEventListener('click', () => {
-            if (chatContainer.style.height === '0px' || chatContainer.style.height === '') {
-                chatContainer.style.height = '200px'; // Expand the chat div
-                arrowButton.innerHTML = '&#9650;'; // Change arrow direction to up
-            } else {
-                chatContainer.style.height = '0px'; // Collapse the chat div
-                arrowButton.innerHTML = '&#9660;'; // Change arrow direction to down
-            }
-        });
+        const navbtn1=document.getElementsByClassName("nav-1")[0];
+        const forumbtn=document.getElementsByClassName("forumbtn")[0];
+        const forum=document.getElementsByClassName("forumfull")[0];
+        navbtn1.addEventListener('click',(event)=>{
+            navbtn1.style.zIndex=-1;
+            forum.style.zIndex=2;
+        })
+        forumbtn.addEventListener('click',(event)=>{
+            navbtn1.style.zIndex=2;
+            forum.style.zIndex=-1;
+        })
     </script>
 </body>
-<!-- 
-<script>
-    window.addEventListener('mouseover', initLandbot, { once: true });
-    window.addEventListener('touchstart', initLandbot, { once: true });
-    var myLandbot;
-    function initLandbot() {
-      if (!myLandbot) {
-        var s = document.createElement('script');s.type = 'text/javascript';s.async = true;
-        s.addEventListener('load', function() {
-          var myLandbot = new Landbot.Livechat({
-            configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-1735266-GSJFRZ8H4RN8GCFO/index.json',
-          });
-        });
-        s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.js';
-        var x = document.getElementsByTagName('script')[0];
-        x.parentNode.insertBefore(s, x);
-      }
-    }
-    </script> -->
+
 </html>
