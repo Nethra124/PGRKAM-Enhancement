@@ -84,8 +84,24 @@
         <!-- Navbar End -->
 
         <button class="navbtn nav-1"><span class="material-symbols-outlined">forum</span></button>
-        <div class="forumfull"><div class="forumtop">Forum<button class="forumbtn">--</button></div><iframe class="forumframe" src="about.html"></iframe></div>
+        <div class="forumfull"><div class="forumtop"><div style="width:70%">Forum</div><button class="forumbtn"><div style="margin-right:3%">--</div></button></div><iframe class="forumframe" src="about.html"></iframe></div>
         
+        <button class="navbtn nav-2"><span class="material-symbols-outlined">forum</span></button>
+        <div class="chatfull"><div class="chattop"><div style="width:70%">Chat Assistant</div><button class="chatbtn"><div style="margin-right:3%">--</div></button></div><iframe class="chatframe" src="about.html"></iframe></div>
+        <!--
+            <div class="chat-bar">
+            <div class="chat-header">Chat Assistant</div>
+            <div class="chat-content" id="chat-content">
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message..." id="chat-input" />
+                <button id="voice-button">🎙️</button>
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+        -->
+        
+
       
         <!-- Carousel Start -->
         <div class="container-fluid p-0">
@@ -159,17 +175,6 @@
             </div>
         </div>
         <!-- Search End -->
-        <div class="chat-bar">
-            <div class="chat-header">Chat Assistant</div>
-            <div class="chat-content" id="chat-content">
-                <!-- Chat content goes here -->
-            </div>
-            <div class="chat-input">
-                <input type="text" placeholder="Type your message..." id="chat-input" />
-                <button id="voice-button">🎙️</button>
-                <button id="send-button">Send</button>
-            </div>
-        </div>
 
 
         <!-- Category Start -->
@@ -746,6 +751,17 @@
         forumbtn.addEventListener('click',(event)=>{
             navbtn1.style.zIndex=2;
             forum.style.zIndex=-1;
+        })
+        const navbtn2=document.getElementsByClassName("nav-2")[0];
+        const chatbtn=document.getElementsByClassName("chatbtn")[0];
+        const chat=document.getElementsByClassName("chatfull")[0];
+        navbtn2.addEventListener('click',(event)=>{
+            navbtn2.style.zIndex=-1;
+            chat.style.zIndex=2;
+        })
+        chatbtn.addEventListener('click',(event)=>{
+            navbtn2.style.zIndex=2;
+            chat.style.zIndex=-1;
         })
     </script>
 </body>
