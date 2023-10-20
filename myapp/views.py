@@ -56,3 +56,6 @@ def chat(request):
 
 def resume(request):
     return render(request,"resume.html")
+
+def login(request):
+    return render(request,"login.html")

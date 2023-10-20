@@ -12,6 +12,7 @@ urlpatterns =[
     path('testimonial.html',views.testimonial,name='testimonial'),
     path('job-detail.html',views.jobdetail,name='jobdsetail'),
     path('resume.html',views.resume,name='resume'),
-    path('chat.html',views.chat,name='chat'),]
+    path('chat.html',views.chat,name='chat'),
+    path('login.html',views.login,name='login'),]
 
 
