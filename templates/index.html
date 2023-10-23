@@ -2,6 +2,13 @@
 <html lang="en">
 {% load static %}
 <head>
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/icon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/new1.css' %}">
     <script src="https://cdn.jsdelivr.net/npm/openai"></script>
     <meta charset="utf-8">
     <title>PGGR</title>
@@ -85,7 +92,36 @@
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                     <a href="chat.html" class="nav-item nav-link">ChatBot</a>
                 </div>
-                <a href="login.html" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Sign Up<i class="fa fa-arrow-right ms-3"></i></a>
+                <a class="btn btn-primary rounded-0 d-none d-lg-block" style="width:10%;align-items:left;padding:0px;">
+                    <img src="{% static 'media/default.png' %}" style="height:100%;position:relative;height:75%;width:75%;vertical-align:middle;top:10%"> 
+                </a>
+                    <img src="user.png" alt="Tooltip Image" class="circle-image" id="tooltip-image">
+   <div class="tooltip-frame" id="tooltip-frame">
+    <div class="card-container" >
+        <img class="round" src="https://i.imgur.com/stD0Q19.jpg" alt="user"/>
+        <h3>Camilia Smith</h3>
+        <h6>New York</h6>
+        <p>User interface designer and <br/> front-end developer</p>
+        <div class="profile mt-5">
+            <a href="profile2.html">
+                <button class="profile_button px-5">View profile</button>
+            </a>
+        </div>
+        <div class="skills">
+            <h6 style="text-align: center;">Skills</h6>
+            <ul >
+                <li>UI / UX</li>
+                <li>Front End Development</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node</li>
+            </ul>
+        </div>
+    </div>
+</div>
+                <!--<a href="login.html" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Sign Up<i class="fa fa-arrow-right ms-3"></i></a>-->
             </div>
         </nav>
         <!-- Navbar End -->
@@ -761,13 +797,32 @@
         const chat=document.getElementsByClassName("chatfull")[0];
         navbtn2.addEventListener('click',(event)=>{
             navbtn2.style.zIndex=-1;
-            chat.style.zIndex=10;
+            chat.style.zIndex=2;
         })
         chatbtn.addEventListener('click',(event)=>{
-            navbtn2.style.zIndex=10;
+            navbtn2.style.zIndex=2;
             chat.style.zIndex=-1;
         })
     </script>
+    <script>
+        const tooltipImage = document.getElementById("tooltip-image");
+    const tooltipFrame = document.getElementById("tooltip-frame");
+    
+    tooltipImage.addEventListener("mouseenter", function () {
+        tooltipFrame.style.display = "block";
+    });
+    
+    tooltipImage.addEventListener("mouseleave", function () {
+        tooltipFrame.style.display = "block";
+    });
+    
+    document.addEventListener("click", function (event) {
+        if (event.target !== tooltipImage && event.target !== tooltipFrame) {
+            tooltipFrame.style.display = "none";
+        }
+    });
+        </script>
+        <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
 </body>
 
 </html>
