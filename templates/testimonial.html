@@ -51,7 +51,7 @@
 
         <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-            <img src="{% static 'img/logo-1.jpg'%}" height="65 px" width="65px" style="margin-left: 10px;">
+            <img src="{% static 'img/logo-1.jpg'%}" style="margin-left: 10px;width:65px;height:65 px">
             <div class="row logo-wid m-0 nowrap"><h2 class="nav-heading fontsmall" style="font-size: 18px; text-align: left; margin-left: 6px;">PUNJAB GHAR GHAR ROZGAR <br><span class="n1 extrasmall-subtitle" style="font-weight: 600; line-height: 20px;">Department of Employment Generation</span></h2></div>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -234,6 +234,30 @@
 
     <!-- Template Javascript -->
     <script src="{% static 'js/main.js'%}"></script>
+    <script>
+        /*const navbtn1=document.getElementsByClassName("nav-1")[0];
+        const forumbtn=document.getElementsByClassName("forumbtn")[0];
+        const forum=document.getElementsByClassName("forumfull")[0];
+        navbtn1.addEventListener('click',(event)=>{
+            navbtn1.style.zIndex=-1;
+            forum.style.zIndex=2;
+        })
+        forumbtn.addEventListener('click',(event)=>{
+            navbtn1.style.zIndex=2;
+            forum.style.zIndex=-1;
+        })*/
+        const navbtn2=document.getElementsByClassName("nav-2")[0];
+        const chatbtn=document.getElementsByClassName("chatbtn")[0];
+        const chat=document.getElementsByClassName("chatfull")[0];
+        navbtn2.addEventListener('click',(event)=>{
+            navbtn2.style.zIndex=-1;
+            chat.style.zIndex=2;
+        })
+        chatbtn.addEventListener('click',(event)=>{
+            navbtn2.style.zIndex=2;
+            chat.style.zIndex=-1;
+        })
+    </script>
 </body>
 
 </html>
