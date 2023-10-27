@@ -59,3 +59,6 @@ def resume(request):
 
 def login(request):
     return render(request,"login.html")
+
+def resume1(request):
+    return render(request, "resume1.html")
