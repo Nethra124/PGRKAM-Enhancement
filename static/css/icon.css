@@ -1,0 +1,152 @@
+.card-container .round {
+	border: 1px solid #03BFCB;
+	border-radius: 50%;
+	padding: 7px;
+}
+
+img.circle-image {
+    position: fixed;
+    top: 20px;
+    right: 20px; /* Adjust the right margin as needed */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Makes the image circular */
+    cursor: pointer;
+    z-index: 999; /* Set a high z-index to keep it on top of other content */
+}
+
+.tooltip-frame {
+
+    display: none;
+    position: fixed;
+    top: 80px; /* Adjust the top margin as needed */
+    right: 20px; /* Adjust the right margin as needed */
+    width: 380px; /* Adjust the width as needed */
+    padding: 10px;
+    transition-delay: 2s, 4ms;
+    color: white;
+    border-radius: 8px;
+    z-index: 998;
+    transition: background 0.3s, transform 0.3s;
+}
+
+
+button.circle-button {
+    position: fixed;
+    top: 20px; /* Adjust the top margin as needed */
+    right: 20px; /* Adjust the right margin as needed */
+    width: 50px;
+    height: 50px;
+    background-color: #0a0a0b; /* Set your desired background color */
+    border-radius: 50%; /* Makes the button circular */
+    cursor: pointer;
+    z-index: 999; /* Set a high z-index to keep it on top of other content */
+}
+
+
+
+
+
+
+
+.card {
+    color: #fff;
+    width: 350px;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #b05200, #1d1917);
+    border: none;
+    
+    box-shadow: 10px 10px 30px rgba(139, 139, 139, 0.4), -10px -10px 30px rgba(178, 178, 178, 0.4);
+  }
+  
+.skills {
+	background-color: #1F1A36;
+	text-align: left;
+	padding: 15px;
+	margin-top: 30px;
+}
+
+.skills ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.skills ul li {
+	border: 1px solid #2D2747;
+	border-radius: 2px;
+	display: inline-block;
+	font-size: 12px;
+	margin: 0 7px 7px 0;
+	padding: 7px;
+}
+
+  /* Improved styling for the buttons */
+  .neo-button {
+    width: 40px;
+    height: 40px;
+    outline: 0 !important;
+    cursor: pointer;
+    color: #fff;
+    font-size: 15px;
+    border: none;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #b05200, #1d1917);
+    box-shadow: inset 10px 10px 30px rgba(139, 139, 139, 0.4), inset -10px -10px 30px rgba(178, 178, 178, 0.4);
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  .neo-button:hover {
+    background: #fdf7ef;;
+    transform: scale(1.1);
+  }
+  
+  .num {
+    color: #eee !important;
+  }
+  
+  .line {
+    color: #fff;
+  }
+  
+  /* Improved styling for the profile button */
+  .profile_button {
+    color: #fff;
+    padding: 10px;
+
+    align-content: center;
+    border: none;
+    outline: 0 !important;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #b05200, #1d1917);
+    box-shadow: 10px 10px 30px rgba(43, 42, 42, 0.4), -10px -10px 30px rgba(109, 109, 109, 0.4);
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  .profile_button:hover {
+    background: linear-gradient(145deg, #b05200, #1d1917);
+    transform: scale(1.1);
+  }
+  
+  /* Icons styles */
+  .fa-facebook {
+    color: #1877f2;
+  }
+  
+  .fa-linkedin {
+    color: #2867b2;
+  }
+  
+  .fa-google {
+    color: #dd4b39;
+  }
+  
+  .fa-youtube {
+    color: #c4302b;
+  }
+  
+  .fa-twitter {
+    color: #1da1f2;
+  }
+  

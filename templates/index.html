@@ -2,6 +2,13 @@
 <html lang="en">
 {% load static %}
 <head>
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/icon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/new1.css' %}">
     <script src="https://cdn.jsdelivr.net/npm/openai"></script>
     <meta charset="utf-8">
     <title>PGGR</title>
@@ -51,7 +58,7 @@
 
         <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-            <img src="{% static 'img/logo-1.jpg'%}" height="65 px" width="65px" style="margin-left: 10px;">
+            <img src="{% static 'img/logo-1.jpg'%}" style="margin-left: 10px;width:65px;height:65 px">
             <div class="row logo-wid m-0 nowrap"><h2 class="nav-heading fontsmall" style="font-size: 18px; text-align: left; margin-left: 6px;">PUNJAB GHAR GHAR ROZGAR <br><span class="n1 extrasmall-subtitle" style="font-weight: 600; line-height: 20px;">Department of Employment Generation</span></h2></div>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -85,7 +92,35 @@
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                     <a href="chat.html" class="nav-item nav-link">ChatBot</a>
                 </div>
-                <a href="login.html" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Sign Up<i class="fa fa-arrow-right ms-3"></i></a>
+                <a class="btn btn-primary rounded-0 d-none d-lg-block" style="width:10%;align-items:left;padding:0px;"  id="tooltip-image" alt="Tooltip Image">
+                    <img src="{% static 'media/default.png' %}" style="height:100%;position:relative;height:75%;width:75%;vertical-align:middle;top:10%"> 
+                </a>
+   <div class="tooltip-frame" id="tooltip-frame">
+    <div class="card-container" >
+        <img class="round" src="https://i.imgur.com/stD0Q19.jpg" alt="user"/>
+        <h3>Camilia Smith</h3>
+        <h6>New York</h6>
+        <p>User interface designer and <br/> front-end developer</p>
+        <div class="profile mt-5">
+            <a href="profile2.html">
+                <button class="profile_button px-5">View profile</button>
+            </a>
+        </div>
+        <div class="skills">
+            <h6 style="text-align: center;">Skills</h6>
+            <ul >
+                <li>UI / UX</li>
+                <li>Front End Development</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node</li>
+            </ul>
+        </div>
+    </div>
+</div>
+                <!--<a href="login.html" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Sign Up<i class="fa fa-arrow-right ms-3"></i></a>-->
             </div>
         </nav>
         <!-- Navbar End -->
@@ -745,7 +780,7 @@
     <!-- Template Javascript -->
     <script src="{% static 'js/main.js'%}"></script>
     <script>
-        const navbtn1=document.getElementsByClassName("nav-1")[0];
+        /*const navbtn1=document.getElementsByClassName("nav-1")[0];
         const forumbtn=document.getElementsByClassName("forumbtn")[0];
         const forum=document.getElementsByClassName("forumfull")[0];
         navbtn1.addEventListener('click',(event)=>{
@@ -755,7 +790,7 @@
         forumbtn.addEventListener('click',(event)=>{
             navbtn1.style.zIndex=2;
             forum.style.zIndex=-1;
-        })
+        })*/
         const navbtn2=document.getElementsByClassName("nav-2")[0];
         const chatbtn=document.getElementsByClassName("chatbtn")[0];
         const chat=document.getElementsByClassName("chatfull")[0];
@@ -768,6 +803,25 @@
             chat.style.zIndex=-1;
         })
     </script>
+    <script>
+        const tooltipImage = document.getElementById("tooltip-image");
+    const tooltipFrame = document.getElementById("tooltip-frame");
+    
+    tooltipImage.addEventListener("mouseenter", function () {
+        tooltipFrame.style.display = "block";
+    });
+    
+    tooltipImage.addEventListener("mouseleave", function () {
+        tooltipFrame.style.display = "block";
+    });
+    
+    document.addEventListener("click", function (event) {
+        if (event.target !== tooltipImage && event.target !== tooltipFrame) {
+            tooltipFrame.style.display = "none";
+        }
+    });
+        </script>
+        <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
 </body>
 
 </html>
