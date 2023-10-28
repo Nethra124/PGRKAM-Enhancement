@@ -12,7 +12,6 @@ let aContainer = document.querySelector("#a-container");
 let bContainer = document.querySelector("#b-container");
 let allButtons = document.querySelectorAll(".submit");
 
-let getButtons = (e) => e.preventDefault()
 
 let changeForm = (e) => {
 
@@ -33,8 +32,6 @@ let changeForm = (e) => {
 }
 
 let mainF = (e) => {
-    for (var i = 0; i < allButtons.length; i++)
-        allButtons[i].addEventListener("click", getButtons );
     for (var i = 0; i < switchBtn.length; i++)
         switchBtn[i].addEventListener("click", changeForm)
 }

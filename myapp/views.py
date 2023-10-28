@@ -1,6 +1,9 @@
+from django.contrib.auth import authenticate,logout,get_user_model
+from django.contrib.auth import login as lg
 from django.shortcuts import render,redirect
 from django.http import JsonResponse
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
+from django.urls import reverse
 import openai
 # Create your views here.
 
@@ -28,7 +31,9 @@ def generate_response(request):
   return JsonResponse({"response": generated_response})
 
 def index(request):
-    return render(request,'index.html')
+    if request.user.is_authenticated:
+        return render(request,'index.html')
+    return render(request,'index1.html')
 
 def fun404(request):
     return render(request, '404.html')
@@ -58,7 +63,32 @@ def resume(request):
     return render(request,"resume.html")
 
 def login(request):
+    if request.method=="POST":
+        try:
+            request.POST["name"]
+            User=get_user_model()
+            user=User.objects.create_user(username=request.POST["email"].lower(),password=request.POST["pass"])
+            user.save()
+            user.email=request.POST["email"].lower()
+            user.first_name=request.POST["name"]
+            user.save()
+            user=authenticate(username=request.POST["Username"].lower(),password=request.POST["Password1"])
+            lg(request,user)
+            return HttpResponseRedirect(reverse("index"))
+        except:
+            user=authenticate(username=request.POST['email'],password=request.POST['pass'])
+            if user:
+                lg(request,user)
+                return HttpResponseRedirect(reverse("index"))
+            else:
+                return render(request,"users/login.html",{
+                    "message": "Invalid Credentials. "
+                })
     return render(request,"login.html")
 
 def resume1(request):
     return render(request, "resume1.html")
+
+def logout_user(request):
+    logout(request)
+    return HttpResponseRedirect(reverse("login"))

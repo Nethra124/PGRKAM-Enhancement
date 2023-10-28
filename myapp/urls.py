@@ -14,6 +14,8 @@ urlpatterns =[
     path('resume.html',views.resume,name='resume'),
     path('chat.html',views.chat,name='chat'),
     path('login.html',views.login,name='login'),
-    path('resume1.html',views.resume1,name='resume1'),]
+    path('resume1.html',views.resume1,name='resume1'),
+    path('logout',views.logout_user,name='logout'),
+    ]
 
 
