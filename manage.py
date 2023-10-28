@@ -2,7 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-
+import sample2
 
 def main():
     """Run administrative tasks."""
@@ -19,4 +19,6 @@ def main():
 
 
 if __name__ == "__main__":
+
     main()
+    

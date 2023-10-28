@@ -1,0 +1,30 @@
+.css-1vhtqje {
+    color:rgb(177, 53, 0) !important;
+    background-color: rgb(255, 235, 219) !important;
+}
+
+.css-gshcy7 {
+    color: rgb(211 88 0)  !important;
+}
+
+.css-1ruedog:hover{
+    border: 1px solid rgb(218 71 0) !important;
+}
+
+.css-1ruedog{
+    border: 1px solid rgb(226 47 0 / 50%) !important;
+    color: rgb(211 88 0) !important;
+}
+
+.css-1ecxs1h{
+    background-color: rgb(214 69 0) !important;
+}
+
+a[href*='https://github.com/Chainlit/chainlit'] {
+    visibility: hidden !important;
+}
+
+img{
+    visibility: hidden !important;
+    width:0px !important;
+}
