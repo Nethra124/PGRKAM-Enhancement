@@ -76,13 +76,18 @@ def login(request):
             lg(request,user)
             return HttpResponseRedirect(reverse("index"))
         except:
+            if(request.POST['email']=="" or request.POST['pass']==""):
+                return render(request,"login2.html",{
+                    "message": "Please enter your credentials"
+                })
             user=authenticate(username=request.POST['email'],password=request.POST['pass'])
             if user:
                 lg(request,user)
                 return HttpResponseRedirect(reverse("index"))
             else:
-                return render(request,"users/login.html",{
-                    "message": "Invalid Credentials. "
+                
+                return render(request,"login2.html",{
+                    "message": "Wrong credentials, retry!"
                 })
     return render(request,"login.html")
 
