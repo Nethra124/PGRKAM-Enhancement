@@ -97,3 +97,9 @@ def resume1(request):
 def logout_user(request):
     logout(request)
     return HttpResponseRedirect(reverse("login"))
+
+def profile2(request):
+    return render(request,"profile2.html")
+
+def edit_profile(request):
+    return render(request,"edit_profile.html")
