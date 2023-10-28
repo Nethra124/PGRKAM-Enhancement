@@ -103,3 +103,6 @@ def profile2(request):
 
 def edit_profile(request):
     return render(request,"edit_profile.html")
+
+def resumeanalysis(request):
+    return render(request,"resumeanalysis.html")

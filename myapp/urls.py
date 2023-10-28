@@ -18,6 +18,7 @@ urlpatterns =[
     path('logout',views.logout_user,name='logout'),
     path('profile2.html',views.profile2,name='profile2'),
     path('edit_profile.html',views.edit_profile,name='edit_profile'),
+    path('resumeanalysis.html',views.resumeanalysis,name='resumeanalysis'),
     ]
 
 
