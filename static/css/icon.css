@@ -19,8 +19,8 @@ img.circle-image {
 
     display: none;
     position: fixed;
-    top: 80px; /* Adjust the top margin as needed */
-    right: 20px; /* Adjust the right margin as needed */
+    top: 70px; /* Adjust the top margin as needed */
+    right: -30px; /* Adjust the right margin as needed */
     width: 380px; /* Adjust the width as needed */
     padding: 10px;
     transition-delay: 2s, 4ms;
