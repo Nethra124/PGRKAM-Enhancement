@@ -39,17 +39,17 @@ hide_cot = false
 
 # Specify a CSS file that can be used to customize the user interface.
 # The CSS file can be served from the public directory or via an external link.
-# custom_css = "/public/test.css"
+custom_css = "public/test.css"
 
 # Override default MUI light theme. (Check theme.ts)
 [UI.theme.light]
-    #background = "#FAFAFA"
-    #paper = "#FFFFFF"
+    #background = "#b05200;"
+    #paper = "#b05200;"
 
     [UI.theme.light.primary]
-        #main = "#F80061"
-        #dark = "#980039"
-        #light = "#FFE7EB"
+        #main = "#b05200;"
+        #dark = "#b05200;"
+        #light = "#b05200;"
 
 # Override default MUI dark theme. (Check theme.ts)
 [UI.theme.dark]

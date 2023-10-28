@@ -23,7 +23,7 @@ def punjabi_trans(text):
     # Transliterate from Roman script to Gurmukhi script (Punjabi)
     return transliterate(text, sanscript.ITRANS, sanscript.GURMUKHI)
 
-openai_api_key = "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"
+
 df = pd.read_csv("naukri.csv")
 
 
@@ -90,12 +90,7 @@ async def setup_agent(settings):
             to_lang = 'en'
             await cl.Message(content="Speak a stentence... | ਇੱਕ ਸਟੈਂਟ ਬੋਲੋ...").send()
             # await cl.Message(content="").send()
-            print("Speak a stentence...")
-            recog1.adjust_for_ambient_noise(source, duration=0.2)
-
-            audio = recog1.listen(source)
-            get_sentence = recog1.recognize_google(audio)
-            translated=punjabi_trans(get_sentence)
+            
         
         if settings["Model"] == "Hindi":
             # you will speak hindi
@@ -103,13 +98,14 @@ async def setup_agent(settings):
             to_lang = 'en'
             await cl.Message(content="Speak a stentence... | एक आभास बोलो ... ").send()
             # await cl.Message(content="").send()
-            print("Speak a stentence...")
-            recog1.adjust_for_ambient_noise(source, duration=0.2)
-            audio = recog1.listen(source)
-            get_sentence = recog1.recognize_google(audio)
-            translated=hindi_trans(get_sentence)
         
         
+        print("Speak a stentence...")
+        recog1.adjust_for_ambient_noise(source, duration=0.2)
+
+        audio = recog1.listen(source)
+        get_sentence = recog1.recognize_google(audio)
+        translated=punjabi_trans(get_sentence)
         # Using recognize.google() method to
         # convert audio into text
         
@@ -134,6 +130,18 @@ async def setup_agent(settings):
             # variable 
             text = text_to_translate.text 
             print(text)
+            message=text
+            today = date.today()
+            messages = [
+
+    {"role": "system", "content": f"{today} is the current date You are a helpful assistant to assist users from the information given the information is {df} and this is your realtime data and you are asked to reply based on the data provided and dont say something like i dont have or i am not aware or without complete information i cant dont say like that now when they ask something like ctc then it means cost of company that is the normal salary if the info is not given in data calculate and give"},]
+            messages.append({"role": "user", "content": message})
+            chat = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo-0613",
+                messages=messages,)
+            reply = chat.choices[0].message.content
+            
+            await cl.Message(reply).send()
 
             speak = gTTS(text=text, lang=to_lang, slow= False) 
 
