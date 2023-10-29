@@ -106,3 +106,4 @@ def edit_profile(request):
 
 def resumeanalysis(request):
     return render(request,"resumeanalysis.html")
+
