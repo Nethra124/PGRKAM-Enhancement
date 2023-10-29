@@ -1,0 +1,5 @@
+node runs the js code, bascially over the cpp interface(not sure)
+Steps for chatroom:
+NPM is a package manager for Node.js packages, or modules if you like
+npm init -y: Will simply generate an empty npm project without going through an interactive process. The -y stands for yes.
+npm install express socket.io: Can install 2 modules at same time, here we install socket.io and express.
