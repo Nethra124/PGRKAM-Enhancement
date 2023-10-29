@@ -24,6 +24,7 @@ import fitz
 import requests
 import io
 import openai
+load_dotenv()
 import streamlit.components.v1 as components
 
 
