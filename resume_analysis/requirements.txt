@@ -1,6 +1,6 @@
 pdfminer3
 pyresparser
-streamlit
+streamlit==1.28.0
 pandas
 pafy
 plotly
@@ -10,4 +10,6 @@ Pillow
 youtube-dl
 nltk
 pdfminer3
-spacy==2.3.5
+spacy
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.3.1/en_core_web_sm-2.3.1.tar.gz
+
