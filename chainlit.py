@@ -62,9 +62,10 @@ async def main(message: cl.Message):
             values=[ "Punjabi","Hindi"],
             initial_index=0,
             )]).send()
+    myskills="""my name is Arunkumar and i am fresher looking for jobs and more about me I am a team player and i have good communiacation skills and i am good at (UI / UX,Front End Development,HTML,CSS,JavaScript,Node JS,Django and good at python as well) """
     today = date.today()
     messages = [
-    {"role": "system", "content": f"{today} is the current date You are a helpful assistant to assist users from the information given the information is {df} and this is your realtime data and you are asked to reply based on the data provided and dont say something like i dont have or i am not aware or without complete information i cant dont say like that now when they ask something like ctc then it means cost of company that is the normal salary if the info is not given in data calculate and give  now when you asked about the navigating the page like i want to go enter some website or somethig to go through a website then refer {nav} which contains a list of address so just ping the address and give them where so see them as well"},
+    {"role": "system", "content": f"greet Arunkumar with his name whenever you speak with him like hi means say hello Arunkumar how can i help you and when asks for job recommendations say Arunkumar based on your skills where you list some of his skills and then say these are the jobs available based on your profile and {myskills} is the skills of the user and always give job recommendation based on his profile. and {today} is the current date You are a helpful assistant to assist users from the information given the information is {df} and this is your realtime data and you are asked to reply based on the data provided and dont say something like i dont have or i am not aware or without complete information i cant... dont say like that now when they ask something like ctc then it means cost of company that is the normal salary if the info is not given in data calculate and give  now when you asked about the navigating the page like i want to go enter some website or somethig to go through a website then refer {nav} which contains a list of address so just ping the address and give them where so see them as well"},
 ]
     messages.append({"role": "user", "content": message})
     chat = openai.ChatCompletion.create(
@@ -159,7 +160,12 @@ async def setup_agent(settings):
             speak.save("captured_voice.mp3")	 
             
             # Using OS module to run the translated voice.
-            os.system("start captured_voice.mp3")
+            # os.system("start captured_voice.mp3")
+            elements = [cl.Audio(name="Reply", path="captured_voice.mp3", display="inline"),]
+            await cl.Message(
+                content="Here is your translated audio",
+                elements=elements,
+            ).send()
 
         # Here we are using except block for UnknownValue 
         # and Request Error and printing the same to

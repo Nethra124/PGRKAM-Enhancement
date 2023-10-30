@@ -24,7 +24,7 @@ import fitz
 import requests
 import io
 import openai
-load_dotenv()
+# load_dotenv()
 import streamlit.components.v1 as components
 
 
@@ -58,7 +58,7 @@ def extract_text_from_pdf(pdf_bytes):
 
     return text
 
-api_key = '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'
+api_key = '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'
 
 def analyze_resume_with_gpt3(resume_text):
     openai.api_key = api_key
