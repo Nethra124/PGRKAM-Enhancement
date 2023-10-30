@@ -123,21 +123,11 @@ async def setup_agent(settings):
         # Using try and except block to improve
         # its efficiency.
         try:
-            
-            # Printing Speech which need to 
-            # be translated.
             print("Phase to be Translated :"+ get_sentence)
-
-            # Using translate() method which requires 
-            # three arguments, 1st the sentence which
-            # needs to be translated 2nd source language
-            # and 3rd to which we need to translate in 
             text_to_translate = translator.translate(get_sentence, 
                                                     src= from_lang,
                                                     dest= to_lang)
             
-            # Storing the translated text in text 
-            # variable 
             text = text_to_translate.text 
             print(text)
             message=text
@@ -152,11 +142,23 @@ async def setup_agent(settings):
             reply = chat.choices[0].message.content
             
             await cl.Message(reply).send()
+            if settings["Model"] == "Hindi":
+                translatedreply=translator.translate(reply, 
+                                                    src= to_lang,
+                                                    dest= from_lang,)
+                # translatedreply=hindi_trans(reply)
+                lang1='hi'
 
-            speak = gTTS(text=text, lang=to_lang, slow= False) 
+            if settings["Model"] == "Punjabi":
+                # translatedreply=punjabi_trans(reply)
+                translatedreply=translator.translate(reply, 
+                                                    src= to_lang,
+                                                    dest= from_lang,)
+                lang1="pa"
+            await cl.Message(translatedreply.text).send()
+            print(translatedreply)
+            speak = gTTS(text=translatedreply.text, lang=lang1, slow= False) 
 
-            # Using save() method to save the translated 
-            # speech in capture_voice.mp3
             speak.save("captured_voice.mp3")	 
             
             # Using OS module to run the translated voice.
